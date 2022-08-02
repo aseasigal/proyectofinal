@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block Titulo %}  Agregar nuevo Alfajor  {% endblock  %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Crear Alfajor
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del alfajor</h4>
+
+        {% include 'alfajores/form.html' %}
+    
+    </div>
+    <div class="card-footer text-muted">
+    </div>
+</div>
+
+{% endblock  %}
