@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 
 class Alfajor(models.Model):
     id = models.AutoField(primary_key=True)
@@ -12,5 +15,11 @@ def __str__(self):
 def delete(self, using=None, keep_parents=False):
     self.imagen.storage.delete(self.imagen.name)
     super(Alfajor).delete()
+
+class Avatar(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='avatares', null = True, blank = True)
+
+
 
 # Create your models here.

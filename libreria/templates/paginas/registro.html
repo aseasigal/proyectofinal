@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block Titulo %}  Login  {% endblock  %}
+{% block Titulo %}  Registro  {% endblock  %}
 
 {% block contenido %}
 
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit">Iniciar Sesion</button>
+    <button type="submit">Registrate</button>
 </form>
 
 {% endblock  %}
