@@ -26,7 +26,7 @@ def login_request(request):
             user = authenticate(username = usuario, password = contra)
             if user is not None:
                 login(request,user)
-                return render(request,'paginas/inicio.html', {'mensaje':f'Bienvenido {usuario}'})
+                return redirect('inicio')
             else:
                 return render(request,'paginas/inicio.html',{'mensaje':'Error, datos incorrectos'})
         else:
